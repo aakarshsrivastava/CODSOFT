@@ -4,8 +4,6 @@
 #include <iomanip>
 
 using namespace std;
-
-// Structure to represent a task
 struct Task {
     string description;
     bool completed;
@@ -13,14 +11,12 @@ struct Task {
     Task(const string& desc) : description(desc), completed(false) {}
 };
 
-// Function to add a new task to the list
 void addTask(vector<Task>& tasks, const string& description) {
     tasks.push_back(Task(description));
 }
 
-// Function to view all tasks
 void viewTasks(const vector<Task>& tasks) {
-    cout << "\n==================== TO-DO LIST ====================\n";
+    cout << "\n********************* TO-DO LIST by Aakarsh ************************\n";
     cout << setw(4) << "No." << setw(20) << "Description" << setw(15) << "Status" << endl;
     cout << "-----------------------------------------------------\n";
 
@@ -33,10 +29,9 @@ void viewTasks(const vector<Task>& tasks) {
         }
         cout << endl;
     }
-    cout << "=====================================================\n";
+    cout << "---------------------------------------\n";
 }
 
-// Function to mark a task as completed
 void markCompleted(vector<Task>& tasks, int index) {
     if (index >= 1 && index <= tasks.size()) {
         tasks[index - 1].completed = true;
@@ -45,7 +40,6 @@ void markCompleted(vector<Task>& tasks, int index) {
     }
 }
 
-// Function to remove a task from the list
 void removeTask(vector<Task>& tasks, int index) {
     if (index >= 1 && index <= tasks.size()) {
         tasks.erase(tasks.begin() + index - 1);
@@ -71,7 +65,7 @@ int main() {
 
         switch (choice) {
             case '1': {
-                cin.ignore(); // Clear the input buffer
+                cin.ignore(); 
                 string taskDescription;
                 cout << "Enter task description: ";
                 getline(cin, taskDescription);
